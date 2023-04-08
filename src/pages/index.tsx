@@ -1,10 +1,7 @@
 import React from "react";
-import {
-  useConnectModal,
-  useDisconnectModal,
-  useAccountState,
-} from "@crossbell/connect-kit";
+
 import { CharacterAvatar, useWeb2Url } from "@crossbell/ui";
+import { useConnectedAccount, ConnectButton } from "@crossbell/connect-kit";
 import { extractCharacterName } from "@crossbell/util-metadata";
 
 export default function IndexPage() {
@@ -29,9 +26,7 @@ function Header() {
 }
 
 function Connection() {
-  const connectModal = useConnectModal();
-  const disconnectModal = useDisconnectModal();
-  const account = useAccountState((s) => s.computed.account);
+  const account = useConnectedAccount();
   const characterName = extractCharacterName(account?.character);
   const address = account?.type === "email" ? account.email : account?.address;
 
@@ -58,21 +53,25 @@ function Connection() {
           </div>
         )}
 
-        {account ? (
-          <button
-            className="transition px-6 py-2 font-medium bg-red-500 hover:bg-red-600 active:bg-red-700 text-white rounded-lg"
-            onClick={disconnectModal.show}
-          >
-            Disconnect
-          </button>
-        ) : (
-          <button
-            className="transition px-6 py-2 font-medium bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white rounded-lg"
-            onClick={connectModal.show}
-          >
-            Connect
-          </button>
-        )}
+        <ConnectButton>
+          {({ isConnected }, { connect, disconnect }) =>
+            isConnected ? (
+              <button
+                className="transition px-6 py-2 font-medium bg-red-500 hover:bg-red-600 active:bg-red-700 text-white rounded-lg"
+                onClick={connect}
+              >
+                Disconnect
+              </button>
+            ) : (
+              <button
+                className="transition px-6 py-2 font-medium bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white rounded-lg"
+                onClick={disconnect}
+              >
+                Connect
+              </button>
+            )
+          }
+        </ConnectButton>
       </div>
     </div>
   );
