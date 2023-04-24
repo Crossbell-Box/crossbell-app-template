@@ -58,14 +58,14 @@ function Connection() {
             isConnected ? (
               <button
                 className="transition px-6 py-2 font-medium bg-red-500 hover:bg-red-600 active:bg-red-700 text-white rounded-lg"
-                onClick={connect}
+                onClick={disconnect}
               >
                 Disconnect
               </button>
             ) : (
               <button
                 className="transition px-6 py-2 font-medium bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white rounded-lg"
-                onClick={disconnect}
+                onClick={connect}
               >
                 Connect
               </button>
