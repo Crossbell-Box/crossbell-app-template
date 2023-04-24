@@ -34,7 +34,12 @@ export default function App({ Component, pageProps }: AppProps) {
       <Hydrate state={pageProps.dehydratedState}>
         <WagmiConfig client={wagmiClient}>
           <IpfsGatewayContext.Provider value={ipfsGateway}>
-            <ConnectKitProvider ipfsLinkToHttpLink={ipfsLinkToHttpLink}>
+            <ConnectKitProvider
+              ipfsLinkToHttpLink={ipfsLinkToHttpLink}
+              // Used for the case when we want to keep the user logged in even if the user disconnects from the wallet.
+              // ConnectKit will make sure to reconnect to the wallet if the user initiates a transaction.
+              ignoreWalletDisconnectEvent={true}
+            >
               <NotificationModal />
               <Component {...pageProps} />
             </ConnectKitProvider>
