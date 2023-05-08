@@ -1,31 +1,12 @@
+"use client";
+
 import React from "react";
 
-import { CharacterAvatar, useWeb2Url } from "@crossbell/ui";
-import { useConnectedAccount, ConnectButton } from "@crossbell/connect-kit";
+import { ConnectButton, useConnectedAccount } from "@crossbell/connect-kit";
 import { extractCharacterName } from "@crossbell/util-metadata";
+import { CharacterAvatar } from "@crossbell/ui";
 
-export default function IndexPage() {
-  return (
-    <div>
-      <Header />
-      <Connection />
-    </div>
-  );
-}
-
-function Header() {
-  const logoUrl = useWeb2Url(
-    "ipfs://bafkreidtjso4rkvefy2yd63p2r2fze74yxadnpc5wbrgrz5yunkd6tnxo4"
-  );
-
-  return (
-    <div className="flex items-center justify-center p-6">
-      <img src={logoUrl} alt="Crossbell Logo" />
-    </div>
-  );
-}
-
-function Connection() {
+export function Connection() {
   const account = useConnectedAccount();
   const characterName = extractCharacterName(account?.character);
   const address = account?.type === "email" ? account.email : account?.address;
