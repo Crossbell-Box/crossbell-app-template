@@ -1,20 +1,15 @@
 "use client";
 
 import React from "react";
-import { WagmiConfig, createConfig } from "wagmi";
+import { WagmiConfig } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { IpfsGatewayContext } from "@crossbell/ipfs-react";
 import { NotificationModal } from "@crossbell/notification";
-import {
-  ConnectKitProvider,
-  getDefaultClientConfig,
-} from "@crossbell/connect-kit";
+import { ConnectKitProvider, createWagmiConfig } from "@crossbell/connect-kit";
 
 import { ipfsGateway, ipfsLinkToHttpLink } from "@/ipfs";
 
-const wagmiConfig = createConfig(
-  getDefaultClientConfig({ appName: "Crossbell App" })
-);
+const wagmiConfig = createWagmiConfig({ appName: "Crossbell App" });
 
 export type ProvidersProps<T = unknown> = {
   children: React.ReactNode;
