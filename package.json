@@ -1,6 +1,6 @@
 {
   "name": "crossbell-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3737",
@@ -9,31 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@crossbell/connect-kit": "0.0.82",
-    "@crossbell/indexer": "0.0.82",
+    "@crossbell/connect-kit": "1.1.1",
     "@crossbell/ipfs-gateway": "0.0.19",
     "@crossbell/ipfs-react": "0.0.19",
-    "@crossbell/notification": "0.0.82",
-    "@crossbell/ui": "0.0.82",
-    "@crossbell/util-ethers": "0.0.82",
-    "@crossbell/util-hooks": "0.0.82",
-    "@crossbell/util-metadata": "0.0.82",
-    "@tanstack/react-query": "4.29.5",
-    "crossbell.js": "0.19.9",
+    "@crossbell/notification": "1.1.0",
+    "@crossbell/ui": "1.1.0",
+    "@crossbell/util-metadata": "1.0.0",
+    "@tanstack/react-query": "4.29.7",
     "eslint": "8.40.0",
-    "eslint-config-next": "13.4.1",
-    "ethers": "5.7.2",
-    "next": "13.4.1",
+    "eslint-config-next": "13.4.2",
+    "next": "13.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.0.4",
-    "wagmi": "0.12.13"
+    "wagmi": "1.0.5"
   },
   "devDependencies": {
     "@crossbell/ipfs-gateway-next": "0.0.19",
     "@types/hast": "2.3.4",
     "@types/lodash.compact": "3.0.7",
-    "@types/node": "20.1.0",
+    "@types/node": "20.1.7",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",

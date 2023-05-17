@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { WagmiConfig, createClient } from "wagmi";
+import { WagmiConfig, createConfig } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { IpfsGatewayContext } from "@crossbell/ipfs-react";
 import { NotificationModal } from "@crossbell/notification";
@@ -12,7 +12,7 @@ import {
 
 import { ipfsGateway, ipfsLinkToHttpLink } from "@/ipfs";
 
-const wagmiClient = createClient(
+const wagmiConfig = createConfig(
   getDefaultClientConfig({ appName: "Crossbell App" })
 );
 
@@ -25,7 +25,7 @@ export function Providers<T = unknown>({ children }: ProvidersProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <WagmiConfig client={wagmiClient}>
+      <WagmiConfig config={wagmiConfig}>
         <IpfsGatewayContext.Provider value={ipfsGateway}>
           <ConnectKitProvider
             ipfsLinkToHttpLink={ipfsLinkToHttpLink}
