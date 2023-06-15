@@ -9,7 +9,12 @@ import { ConnectKitProvider, createWagmiConfig } from "@crossbell/connect-kit";
 
 import { ipfsGateway, ipfsLinkToHttpLink } from "@/ipfs";
 
-const wagmiConfig = createWagmiConfig({ appName: "Crossbell App" });
+const wagmiConfig = createWagmiConfig({
+  appName: "Crossbell App",
+  // WalletConnect Project ID.
+  // You can create or find it at https://cloud.walletconnect.com
+  // walletConnectV2ProjectId: "YOUR_PROJECT_ID",
+});
 
 export type ProvidersProps<T = unknown> = {
   children: React.ReactNode;
