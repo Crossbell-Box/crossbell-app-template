@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@crossbell/connect-kit": "1.4.6",
+    "@crossbell/connect-kit": "1.4.7",
     "@crossbell/ipfs-gateway": "0.0.19",
     "@crossbell/ipfs-react": "0.0.19",
     "@crossbell/notification": "1.4.6",
