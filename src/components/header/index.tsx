@@ -5,7 +5,7 @@ import React from "react";
 
 export function Header() {
   const logoUrl = useWeb2Url(
-    "ipfs://bafkreidtjso4rkvefy2yd63p2r2fze74yxadnpc5wbrgrz5yunkd6tnxo4"
+    "ipfs://bafkreidtjso4rkvefy2yd63p2r2fze74yxadnpc5wbrgrz5yunkd6tnxo4",
   );
 
   return (
