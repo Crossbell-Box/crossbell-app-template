@@ -9,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@crossbell/connect-kit": "1.5.19",
+    "@crossbell/connect-kit": "1.5.20",
     "@crossbell/ipfs-gateway": "0.0.21",
     "@crossbell/ipfs-react": "0.0.21",
-    "@crossbell/notification": "1.5.19",
-    "@crossbell/ui": "1.5.19",
-    "@crossbell/util-metadata": "1.5.19",
+    "@crossbell/notification": "1.5.20",
+    "@crossbell/ui": "1.5.20",
+    "@crossbell/util-metadata": "1.5.20",
     "@tanstack/react-query": "4.36.1",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
